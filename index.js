@@ -1,8 +1,9 @@
 class Proger {
     constructor (name, age, stack) {
-    this.name = name;
-    this.age = age;
-    this.stack = stack;
+        // cледим за отступами!
+        this.name = name;
+        this.age = age;
+        this.stack = stack;
     }
 
     learn (nameTech) {
@@ -11,6 +12,8 @@ class Proger {
 }
 
 class Mentor extends Proger {
+    // в таких случаях, когда у класса нет своих атрибутов,
+    // конструктор можно убрать - он всё равно унаследуется  
     constructor (name, age, stack) {
         super (name, age, stack)
     }
@@ -18,7 +21,7 @@ class Mentor extends Proger {
     learn (nameTech) {
         super.learn(nameTech)
     }
-
+    // назыаем параметры по смыслу - stack или techStack, но никак не param2
     teach (student, param2) {
         student.stack = [...student.stack,...param2]
     }
@@ -39,7 +42,7 @@ class Developer extends Proger {
         super (name, age, stack)
         this.salary = salary
     }
-
+    // а в чём смысл?)
     level(name){
         console.log(name);
     }
